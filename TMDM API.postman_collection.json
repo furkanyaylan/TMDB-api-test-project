@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "7ea0a062-b995-4af1-8b17-9e7312ce084d",
+		"name": "TMDM API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29635726"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "GET Popular Movies(popüler filmleri getir)",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "in",
+									"value": "query",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "c9b60921444431a3c58c826982b68091",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/movie/popular",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"movie",
+								"popular"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET A Movies(id'si yazılan filmi getir)",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "in",
+									"value": "query",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "c9b60921444431a3c58c826982b68091",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/movie/:movie_id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"movie",
+								":movie_id"
+							],
+							"variable": [
+								{
+									"key": "movie_id",
+									"value": "1318447"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rate Movies(filme raiting ver)",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "in",
+									"value": "query",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "c9b60921444431a3c58c826982b68091",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"value\": 6.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/movie/:movie_id/rating?session_id={{session_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"movie",
+								":movie_id",
+								"rating"
+							],
+							"query": [
+								{
+									"key": "session_id",
+									"value": "{{session_id}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "movie_id",
+									"value": "1318447"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Token(Token oluşturma)",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "in",
+									"value": "query",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "c9b60921444431a3c58c826982b68091",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/authentication/token/new",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"authentication",
+								"token",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create id Session (Session id oluşturma)",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "in",
+									"value": "query",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "c9b60921444431a3c58c826982b68091",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"request_token\": \"4ddb2a4d776005296542cbfe4f0aad85e64b94ee\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/authentication/session/new",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"authentication",
+								"session",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rate(Verilen Raitingi silme)",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "in",
+									"value": "query",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "c9b60921444431a3c58c826982b68091",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "api_key",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/movie/:movie_id/rating?session_id={{session_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"movie",
+								":movie_id",
+								"rating"
+							],
+							"query": [
+								{
+									"key": "session_id",
+									"value": "{{session_id}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "movie_id",
+									"value": "1318447"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://api.themoviedb.org/3",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "4ddb2a4d776005296542cbfe4f0aad85e64b94ee",
+			"type": "string"
+		},
+		{
+			"key": "session_id",
+			"value": "fc724c48f5a80dde46bdfbd0dc7e472ce1b25a88",
+			"type": "string"
+		}
+	]
+}
